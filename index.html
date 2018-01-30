@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/30/linux加固的基本方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mlik">
@@ -283,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/28/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/01/30/linux加固的基本方法/" itemprop="url">Linux系统安全加固的基本方法</a></h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T13:36:14+00:00">
-                2018-01-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T02:20:17+00:00">
+                2018-01-30
               </time>
             
 
@@ -305,6 +305,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安全防御/" itemprop="url" rel="index">
+                    <span itemprop="name">安全防御</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -335,15 +357,30 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h4 id="账号口令加固"><a href="#账号口令加固" class="headerlink" title="账号口令加固"></a>账号口令加固</h4><ol>
+<li>口令生存期  </li>
+<li>口令复杂度</li>
+<li>版本信息</li>
+<li>限制用户登录</li>
+<li>检查是否有除root用户以外的UID为0的用户</li>
+<li>登录超时限制</li>
+<li>检查是否使用PAM认证模块禁止wheel组之外的用户su为root  </li>
+</ol>
+<h4 id="协议安全"><a href="#协议安全" class="headerlink" title="协议安全"></a>协议安全</h4><ol>
+<li>限制root用户远程登录SSH</li>
+<li>使用SSH协议进程远程登录</li>
+<li>禁止root用户登录FTP</li>
+<li>禁止匿名FTP</li>
+<li>预防FLOOD攻击  </li>
+</ol>
+<h4 id="认证权限"><a href="#认证权限" class="headerlink" title="认证权限"></a>认证权限</h4><ol>
+<li>文件与目录的缺省权限控制</li>
+<li>配置用户最小权限</li>
+<li>Wheel组的设计</li>
+</ol>
+<h4 id="日志审计"><a href="#日志审计" class="headerlink" title="日志审计"></a>日志审计</h4><ol>
+<li>启用远程日志功能</li>
+</ol>
 
           
         
@@ -436,7 +473,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
